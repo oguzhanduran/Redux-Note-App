@@ -1,0 +1,63 @@
+.NoteContextContainer {
+  background-color: rgb(223, 223, 223);
+  padding: 15px;
+  margin-left: -12px;
+}
+
+.NoteContextCheckColorGreen {
+  position: relative;
+  margin-top: 15px;
+  padding: 25px;
+  background-color: green;
+  border-radius: 10px;
+  border: none;
+}
+.NoteContextCheckColorGrey {
+  position: relative;
+  margin-top: 15px;
+  padding: 25px;
+  background-color: Grey;
+  border-radius: 10px;
+  border: none;
+}
+.NoteContextCheckColorBlue {
+  position: relative;
+  margin-top: 15px;
+  padding: 25px;
+  background-color: blue;
+  border-radius: 10px;
+  border: none;
+}
+.NoteContextCheckColorYellow {
+  position: relative;
+  margin-top: 15px;
+  padding: 25px;
+  background-color: yellow;
+  border-radius: 10px;
+  border: none;
+}
+
+.submitButton {
+  background-color: black;
+  padding: 10px;
+  margin: auto;
+  display: block;
+  margin-top: 25px;
+  color: white;
+  border-radius: 10px;
+}
+
+.submitButton:hover {
+  background-color: gray;
+}
+
+.colorBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+h1,
+h4 {
+  text-align: center;
+}
