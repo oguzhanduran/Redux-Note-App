@@ -1,14 +1,14 @@
 import "./App.css";
 import Filter from "./components/Filter/Filter";
 import NoteContent from "./components/NoteContent/NoteContent";
-import Notes from "./components/Notes/Notes";
+import NoteCard from "./components/NoteCard/NoteCard";
 
 function App() {
   return (
     <div>
       <NoteContent />
       <Filter />
-      <Notes />
+      <NoteCard />
     </div>
   );
 }

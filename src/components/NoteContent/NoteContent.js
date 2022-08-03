@@ -5,11 +5,12 @@ import check from "../../assets/check.svg";
 import { useDispatch } from "react-redux";
 import { addNote } from "../../redux/notes/notesSlice";
 import { nanoid } from "@reduxjs/toolkit";
+import { BsGithub, BsTwitter } from "react-icons/bs";
 
 const NoteContent = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [color, setColor] = useState("bgLight");
+  const [color, setColor] = useState("bgYellow");
 
   const dispatch = useDispatch();
 
@@ -24,14 +25,16 @@ const NoteContent = () => {
 
     setTitle("");
     setContent("");
-    setColor("bgLight");
   };
   return (
     <Container>
       <Row>
-        <h1>Welcome to The Note App 👋 </h1>
-        <Col sm={1}></Col>
-        <Col>
+        <h1 className={styles.mainTitle}>Welcome to The Note App 👋</h1>
+        <Col md={1}></Col>
+
+        {/* Form */}
+
+        <Col md={5}>
           <Form className={styles.NoteContentContainer} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Note Title</Form.Label>
@@ -57,7 +60,10 @@ const NoteContent = () => {
             <button className={styles.submitButton}>Add Note</button>
           </Form>
         </Col>
-        <Col className={styles.NoteContentContainer}>
+
+        {/* Color */}
+
+        <Col md={5} className={styles.NoteContentContainer}>
           <h4>Choose a Color</h4>
           <div className={styles.colorBox}>
             <button
@@ -74,6 +80,7 @@ const NoteContent = () => {
             >
               {color === "bgBlue" && <img src={check} alt="" />}
             </button>
+
             <button
               type="button"
               className={styles.NoteContentCheckColorGrey}
@@ -89,8 +96,38 @@ const NoteContent = () => {
               {color === "bgGreen" && <img src={check} alt="" />}
             </button>
           </div>
+
+          {/* Icons */}
+
+          <div className={styles.footer}>
+            <h6 className="">
+              Developed by{" "}
+              <a
+                href="https://www.linkedin.com/in/oguzhnduran/"
+                target="_blank"
+              >
+                Oguzhan Duran
+              </a>
+            </h6>
+            <button
+              className={styles.socialMediaIcons}
+              onClick={() =>
+                window.open("https://github.com/oguzhanduran", "_blank")
+              }
+            >
+              <BsGithub size={35} />
+            </button>
+            <button
+              className={styles.socialMediaIcons}
+              onClick={() =>
+                window.open("https://twitter.com/oguzhnduran", "_blank")
+              }
+            >
+              <BsTwitter size={35} />
+            </button>
+          </div>
         </Col>
-        <Col sm={1}></Col>
+        <Col md={1}></Col>
       </Row>
     </Container>
   );

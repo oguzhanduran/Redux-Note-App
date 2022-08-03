@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { AiFillDelete } from "react-icons/ai";
-import styles from "./Notes.module.css";
+import styles from "./NoteCard.module.css";
 import { useSelector } from "react-redux";
 import { deleteNote } from "../../redux/notes/notesSlice";
 import { useDispatch } from "react-redux/es/exports";
@@ -36,9 +36,7 @@ function Notes() {
                     type="button"
                     onClick={() => handleDestroy(item.id)}
                   >
-                    <h1>
-                      <AiFillDelete className={styles.icons} />
-                    </h1>
+                    <AiFillDelete className={styles.icons} size="35" />
                   </button>
                 </Card.Body>
               </Card>

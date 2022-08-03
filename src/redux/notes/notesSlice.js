@@ -8,15 +8,21 @@ export const notesSlice = createSlice({
       : [
           {
             id: 1,
-            title: "Learn React",
-            content: "Lorem ipsum dolor sit.",
-            color: "bg-light",
+            title: "Wake up Earlier",
+            content: "I am going to wake up at six a.m. every day.",
+            color: "bgYellow",
           },
           {
             id: 2,
-            title: "Read a book",
-            content: "Lorem ipsum dolor sit.",
-            color: "bg-light",
+            title: "Read the Book",
+            content: "I will re-read my favorite book.",
+            color: "bgGreen",
+          },
+          {
+            id: 3,
+            title: "Do Exercise ",
+            content: "Take a walk for an hour every day",
+            color: "bgBlue",
           },
         ],
     activeFilter: "",
@@ -32,11 +38,17 @@ export const notesSlice = createSlice({
       state.items = filtered;
       localStorage.setItem("notes", JSON.stringify(state.items));
     },
-    editNote: (state, action) => {
-      const { id } = action.payload;
-      const item = state.items.find((item) => item.id === id);
-      alert(item);
-    },
+    // editNote: (state, action) => {
+    //   const { id } = action.payload;
+    //   const item = state.items.find((item) => item.id === id);
+    //   alert(item);
+    // editNote: (state, action) => {
+    //   const itemIndex = state.items.findIndex(
+    //     (item) => item.id === action.payload.id
+    //   );
+    //   state.items[itemIndex] = action.payload;
+    //   localStorage.setItem("notes", JSON.stringify(state.items));
+    // },
     searchNote: (state, action) => {
       state.activeFilter = action.payload;
     },

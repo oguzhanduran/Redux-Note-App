@@ -3,17 +3,17 @@
 }
 
 .bgYellow {
-  background-color: yellow;
+  background-color: #ffc107;
 }
 
 .bgGreen {
-  background-color: green;
+  background-color: #20c997;
 }
 
 .bgBlue {
-  background-color: blue;
+  background-color: #0dcaf0;
 }
 
 .bgGrey {
-  background-color: grey;
+  background-color: rgb(128, 128, 128);
 }
