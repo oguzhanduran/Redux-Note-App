@@ -1,38 +1,43 @@
-.NoteContextContainer {
+.NoteContentContainer {
   background-color: rgb(223, 223, 223);
-  padding: 15px;
+  padding: 25px;
   margin-left: -12px;
 }
 
-.NoteContextCheckColorGreen {
-  position: relative;
+.NoteContentCheckColorBtnGreen {
+  padding: 20px;
   margin-top: 15px;
-  padding: 25px;
+  height: 75px;
+  width: 75px;
+  border-radius: 10px;
+  border: none;
   background-color: green;
-  border-radius: 10px;
-  border: none;
 }
-.NoteContextCheckColorGrey {
-  position: relative;
-  margin-top: 15px;
-  padding: 25px;
+
+.NoteContentCheckColorGrey {
   background-color: Grey;
+  padding: 20px;
+  margin-top: 15px;
+  height: 75px;
+  width: 75px;
   border-radius: 10px;
   border: none;
 }
-.NoteContextCheckColorBlue {
-  position: relative;
-  margin-top: 15px;
-  padding: 25px;
+.NoteContentCheckColorBlue {
   background-color: blue;
+  padding: 20px;
+  margin-top: 15px;
+  height: 75px;
+  width: 75px;
   border-radius: 10px;
   border: none;
 }
-.NoteContextCheckColorYellow {
-  position: relative;
-  margin-top: 15px;
-  padding: 25px;
+.NoteContentCheckColorYellow {
   background-color: yellow;
+  padding: 20px;
+  margin-top: 15px;
+  height: 75px;
+  width: 75px;
   border-radius: 10px;
   border: none;
 }
@@ -45,6 +50,7 @@
   margin-top: 25px;
   color: white;
   border-radius: 10px;
+  margin-bottom: -10px;
 }
 
 .submitButton:hover {
@@ -55,9 +61,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-top: 25px;
 }
 
 h1,
 h4 {
   text-align: center;
+}
+
+img {
+  margin-bottom: 15px;
+  margin-left: -5px;
 }

@@ -1,0 +1,19 @@
+.icons {
+  cursor: pointer;
+  margin: 10px;
+  color: rgba(0, 0, 0, 0.748);
+}
+
+.icons:hover {
+  color: black;
+}
+
+.btnIcon {
+  border: none;
+  background-color: transparent;
+}
+
+.cardSize {
+  min-width: 18rem;
+  margin: 20px;
+}
