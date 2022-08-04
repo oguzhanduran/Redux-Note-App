@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const notesSlice = createSlice({
   name: "notes",
   initialState: {
-    items: localStorage.getItem("notes")
+    items: localStorage.getItem("notes") //local storage'da kayıt yapılmışsa onu yükle yoksa varsayılanı yükle dedik.
       ? JSON.parse(localStorage.getItem("notes"))
       : [
           {
@@ -29,31 +29,22 @@ export const notesSlice = createSlice({
   },
   reducers: {
     addNote: (state, action) => {
-      state.items.push(action.payload);
-      localStorage.setItem("notes", JSON.stringify(state.items));
+      state.items.push(action.payload); //NoteContent componentimizden gönderilen id, title, content, color verilerini varsayılan items'a push'ladık.
+      localStorage.setItem("notes", JSON.stringify(state.items)); // İtems'ın son halini local storage'a kaydettik.
     },
+
     deleteNote: (state, action) => {
-      const id = action.payload;
-      const filtered = state.items.filter((item) => item.id !== id);
+      const id = action.payload; // NoteCard componentimizde bize direk id olarak yollandığı için id olarak alabildik. Diğer türlü {id} şeklinde almamız gerekirdi.
+      const filtered = state.items.filter((item) => item.id !== id); // Silinmesi gereken item dışındaki tüm itemları filtreleyerek filtered değişkenine atadık.
       state.items = filtered;
       localStorage.setItem("notes", JSON.stringify(state.items));
     },
-    // editNote: (state, action) => {
-    //   const { id } = action.payload;
-    //   const item = state.items.find((item) => item.id === id);
-    //   alert(item);
-    // editNote: (state, action) => {
-    //   const itemIndex = state.items.findIndex(
-    //     (item) => item.id === action.payload.id
-    //   );
-    //   state.items[itemIndex] = action.payload;
-    //   localStorage.setItem("notes", JSON.stringify(state.items));
-    // },
+
     searchNote: (state, action) => {
-      state.activeFilter = action.payload;
+      state.activeFilter = action.payload; //Search'e girilen her değer activeFilter'e kaydediliyor.
     },
   },
 });
 
-export const { addNote, deleteNote, editNote, searchNote } = notesSlice.actions;
+export const { addNote, deleteNote, searchNote } = notesSlice.actions;
 export default notesSlice.reducer;

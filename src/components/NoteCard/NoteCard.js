@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { AiFillDelete } from "react-icons/ai";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import styles from "./NoteCard.module.css";
 import { useSelector } from "react-redux";
 import { deleteNote } from "../../redux/notes/notesSlice";
@@ -8,13 +8,15 @@ import { useDispatch } from "react-redux/es/exports";
 
 function Notes() {
   const items = useSelector((state) => state.notes.items);
-  const activeFilter = useSelector((state) => state.notes.activeFilter);
-  const filteredItems = items.filter((item) =>
-    item.title.toLowerCase().includes(activeFilter.toLowerCase())
-  );
-
   const dispatch = useDispatch();
 
+  //Filtering
+  const activeFilter = useSelector((state) => state.notes.activeFilter); // NoteSlice'da tanımladığımız activeFilter'ı aldık.
+  const filteredItems = items.filter(
+    (item) => item.title.toLowerCase().includes(activeFilter.toLowerCase()) // Search'e girilen değerler activeFilter'e kaydediliyordu. Burda search'e girilen değerler ile title'daki değerler bir birini kapsıyorsa filteredItems'a kaydet diyerek. Filtreleme yaptırdık.
+  );
+
+  // Deleting
   const handleDestroy = (id) => {
     if (window.confirm("Are you sure?")) {
       dispatch(deleteNote(id));
