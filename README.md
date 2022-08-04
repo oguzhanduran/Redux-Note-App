@@ -5,10 +5,10 @@
 <div>
 
   <p align="center">
-    The application provides adding and deleting your notes together with a background color.
+    The application provides adding and deleting your notes together with a selected background color.
     <br />
     <br />
-    <a href="https://oguzhanduran-react-weather-app.netlify.app/" target="_blank">↪️ See it live!</a>
+    <a href="https://oguzhan-duran-redux-note-app.netlify.app/" target="_blank">↪️ See it live!</a>
   </p>
 </div>
 
