@@ -22,6 +22,7 @@
 
 - [React.js](https://reactjs.org/)
 - [Redux](https://redux.js.org/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 
 <!-- SETUP -->
 
